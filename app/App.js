@@ -9,7 +9,8 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Image
 } from 'react-native';
 import Header from './components/Header/HeaderContainer';
 import Card from './components/Card/CardContainer';
@@ -19,6 +20,12 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <View style={styles.imageStyle} >
+          <Image source={require('./components/images/atm.jpg')} style={{
+            // flex: 1,
+            resizeMode: 'center',
+          }}/>
+        </View>
           <Header/>
           <Card/>
           <Transaction/>
@@ -31,5 +38,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F5F5F5',
+  },
+  imageStyle: {
+    backgroundColor: 'red',
+    position: 'absolute',
+    // top: 0,
+    // left: 0,
+    // width: '100%',
+    // height: '100%',
   }
 });
